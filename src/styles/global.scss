@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;600&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: var(--third);
+
+    ul{
+        list-style: none;
+    }
+}
+
+/* C O L O R S  */
+
+:root{
+    --main:#181D24;
+    --white: #FFFFFF;
+    --light-blue: #2CA9F7;
+    --light-green: #00CC95;
+    --pink:#DE004D;
+    --arrow-wind:#181D24; 
+   
+}
+

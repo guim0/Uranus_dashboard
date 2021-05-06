@@ -1,0 +1,39 @@
+*{
+  font-family: 'Inconsolata', monospace;
+}
+
+.Card{
+  width: 376px;
+  height: 319px;
+  border-radius: 20px;
+  text-align: center;
+  background: var(--light-green);
+  color: var(--white);
+
+
+    .Title{
+            display: flex;
+        flex-direction: column;
+        p{
+          margin-top: 1.5rem;
+          font-weight: 600;
+        }
+
+        .data{
+          text-align: center;
+          p{
+            margin-top: 3rem;
+            font-size: 9rem;
+      
+            letter-spacing: 1px;
+            font-weight: 300;
+           
+            img{
+              width: 150px;
+              height: 150px;
+              opacity: 0.55;
+            }
+          }
+        }
+    }
+}
