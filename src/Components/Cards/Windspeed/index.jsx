@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-export function Windspeed() {
+export function Windspeed({ wind }) {
 
   return (
     <div className={styles.Card}>
@@ -10,7 +10,7 @@ export function Windspeed() {
     <div className={styles.Title}>
         <p>Wind speed</p>
         <div className={styles.data}>
-          <p>10<span>KM/s</span></p>
+          <p>{wind}<span>KM/s</span></p>
         </div>
     </div>
 

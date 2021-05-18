@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-export function Moisture() {
+export function Moisture({ humidity }) {
 
   return (
     <div className={styles.Card}>
@@ -10,7 +10,7 @@ export function Moisture() {
     <div className={styles.Title}>
         <p>Moisture</p>
         <div className={styles.data}>
-          <p>75<span>%</span></p>
+          <p>{humidity}<span>%</span></p>
         </div>
     </div>
 

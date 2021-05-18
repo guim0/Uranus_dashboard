@@ -1,38 +1,29 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import styles from './styles.module.scss';
 
 export function Header() {
 
-  const [location, setLocation] = useState (false);
-  const [weather, setWeather] = useState(false);
-
-
-  let getWeather = async (lat, long) => {
-    let res = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
-      params: {
-        lat: lat,
-        lon: long,
-        appid: process.env.REACT_APP_OPEN_WEATHER_KEY,
-        lang: 'pt',
-      }
-    });
-  }
-
+  const [locale, setLocale] = useState('')
 
   useEffect(() =>{
     navigator.geolocation.getCurrentPosition((position)=>{
       console.log(position.coords.latitude, position.coords.longitude);
-      setLocation(true)
+      axios.get("http://api.openweathermap.org/data/2.5/weather", {
+        params: {
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+          appId: process.env.REACT_APP_OPEN_WHETHER_KEY,
+          lang: 'pt',
+          units: 'Metric'
+        }
+      }).then(res => {
+        const { name } = res.data
+        setLocale(name);
+      })
     })
   }, [])
-        if(location == false){
-          return (
-            <>
-            <p className={styles.needloc}>Oi! precisamos da sua localização :D</p>
-            </>
-          )
-        }
+ 
 
   return (
     <header className={styles.headerContainer}>
@@ -43,7 +34,7 @@ export function Header() {
     
     
      <div className={styles.headerInputs}>
-      <p>Guarulhos - SP</p>
+      <p>{locale}</p>
 
       <img src="./bell.png"alt="Bell"/><span className={styles.dot}></span>
       <img id="user" src="./admin.png"alt="Bell"/>
