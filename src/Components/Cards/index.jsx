@@ -10,7 +10,7 @@ import { PluvIndex } from './PluvIndex'
 
 import Calendar from 'react-calendar';
 
-import 'react-calendar/dist/Calendar.css';
+import '../../styles/Calendar.css';
 
 import styles from './styles.module.scss';
 
@@ -28,7 +28,7 @@ export function Cards() {
   useEffect(() =>{
     navigator.geolocation.getCurrentPosition((position)=>{
       console.log(position.coords.latitude, position.coords.longitude);
-      axios.get("http://api.openweathermap.org/data/2.5/weather", {
+      axios.get("http://localhost:3303/api/mqtt", {
         params: {
           lat: position.coords.latitude,
           lon: position.coords.longitude,
@@ -36,14 +36,17 @@ export function Cards() {
           lang: 'pt',
           units: 'Metric'
         }
+        
       }).then(res => {
-        const { temp, humidity } = res.data.main
-        const { speed, deg } = res.data.wind
-        setTemp(temp);
-        setHumidity(humidity);
-        setWind(speed);
-        setDeg(deg);
-        setPluv(pluv);
+        console.log(res)
+        const { moisture, pluviometter, temperature } = res.data.params
+        const { direction , velocity} = res.data.params.wind
+        
+        setTemp(temperature);
+        setHumidity(moisture);
+        setWind(velocity);
+        setDeg(direction.replace('<', ''));
+        setPluv(pluviometter);
         
       })
       setHasLocation(true)
@@ -70,7 +73,7 @@ export function Cards() {
          </div>
 
          <div className={styles.rightSide}>
-         <Calendar />
+         <Calendar className="calendar"/>
          <PluvIndex pluv={pluv}/>
          </div>
        </div>

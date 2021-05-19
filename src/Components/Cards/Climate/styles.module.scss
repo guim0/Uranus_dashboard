@@ -1,38 +1,33 @@
-*{
-  font-family: 'Inconsolata', monospace;
-
+* {
+    font-family: 'Inconsolata', monospace;
 }
 
-.Card{
-  width: 376px;
-  height: 319px;
-  border-radius: 20px;
-  text-align: center;
-  background: var(--light-blue);
-  color: var(--white);
-
-
-    .Title{
-            display: flex;
+.Card {
+    width: 376px;
+    height: 319px;
+    border-radius: 20px;
+    text-align: center;
+    background: var(--light-blue);
+    color: var(--white);
+    .Title {
+        display: flex;
         flex-direction: column;
-        p{
-          margin-top: 1.5rem;
-          font-weight: 600;
+        p {
+            margin-top: 1.5rem;
+            font-weight: 600;
         }
-
-        .data{
-          text-align: center;
-          p{
-            margin-top: 3rem;
-            font-size: 8.5rem;
-            font-weight: 300;
-      
-            letter-spacing: -10px;
-          }
-          span{
-            font-size: 4.5rem;
-            letter-spacing: 2px;
-          }
+        .data {
+            text-align: center;
+            p {
+                margin-top: 3.4rem;
+                font-size: 8rem;
+                font-weight: 300;
+                letter-spacing: -10px;
+            }
+            span {
+                font-size: 4.2rem;
+                letter-spacing: -1px;
+            }
         }
     }
 }

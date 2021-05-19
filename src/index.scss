@@ -1,9 +1,9 @@
-html{
-    background-color:var(--main);
-  
-    
+html {
+    background-color: var(--main);
+    overflow: hidden;
 }
-section{
+
+section {
     padding: 3rem 5rem;
     display: flex;
     gap: 3em;
