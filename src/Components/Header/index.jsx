@@ -34,10 +34,10 @@ export function Header() {
     
     
      <div className={styles.headerInputs}>
-      <p>{locale}</p>
+      <p>Guarulhos - SP</p>
 
-      <img src="./bell.png"alt="Bell"/><span className={styles.dot}></span>
-      <img id="user" src="./admin.png"alt="Bell"/>
+      <img src="./bell.png"alt="Bell" /><span className={styles.dot}></span>
+      <img className={styles.user} src="./admin.png"alt="Bell"/>
 
 
       </div>
